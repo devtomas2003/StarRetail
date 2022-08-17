@@ -23,17 +23,13 @@ export default function Home(){
     useEffect(() => {
         function startSlider(){
             setInterval(() => {
-                if(activeSlider === listSliders.length-1){
-                    setActiveSlider(0);
-                }else{
-                    setActiveSlider(function(prevSlider: number){
-                        if(prevSlider === listSliders.length-1){
-                            return 0;
-                        }else{
-                            return prevSlider + 1;
-                        }
-                    });
-                }
+                setActiveSlider(function(prevSlider: number){
+                    if(prevSlider === listSliders.length-1){
+                        return 0;
+                    }else{
+                        return prevSlider + 1;
+                    }
+                });
             }, 5000);
         }
         if(!sliderStarted.current){

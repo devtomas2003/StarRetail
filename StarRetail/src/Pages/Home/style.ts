@@ -79,21 +79,21 @@ export const MostedTickets = styled.div`
     padding: 20px;
 `;
 
-export const EventsList = styled.div`
+export const ListsMore = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
 `;
 
-export const MTText = styled.p`
+export const ListTitle = styled.p`
     color: #E05931;
     font-size: 25px;
     font-weight: bold;
     text-transform: uppercase;
 `;
 
-export const EventData = styled.div`
+export const ListData = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -106,17 +106,16 @@ export const EventData = styled.div`
             display: none;
         }
     }
-
 `;
 
-export const ImgEvent = styled.img`
+export const ImgList = styled.img`
     width: 130px;
     height: 130px;
     border-radius: 50%;
     margin-top: 15px;
 `;
 
-export const EventName = styled.p`
+export const ListName = styled.p`
     margin-top: 10px;
     font-size: 20px;
     color: #333;

@@ -39,6 +39,9 @@ export const InputSearch = styled.input`
 export const LogoRetail = styled.img`
     width: 150px;
     margin-top: 15px;
+    &:hover{
+        cursor: pointer;
+    }
 `;
 
 export const MenuOptions = styled.div`

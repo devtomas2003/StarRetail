@@ -25,7 +25,7 @@ export default function HomeHeader(){
     return (
         <Container>
             <HeaderBox>
-                <LogoRetail src={SourceRetail} title="Star Retail" alt="Star Retail" />
+                <LogoRetail src={SourceRetail} title="Star Retail" alt="Star Retail" onClick={() => { location.href = "/"; }} />
                 <SloganRetail>Compre sem complicações</SloganRetail>
                 <BoxSearch>
                     <InputSearch type="text" autoComplete="on" autoCapitalize="off" placeholder="Pesquisar..." />
@@ -34,7 +34,7 @@ export default function HomeHeader(){
                     </BtnSrch>
                 </BoxSearch>
                 <LinkWho href="#">Quem somos?</LinkWho>
-                <AccountLink>
+                <AccountLink onClick={() => { location.href = "/login"; }}>
                     <RiAccountCircleFill size={20} color="#041E46"  />
                     <AccountText>A minha area</AccountText>
                 </AccountLink>
@@ -44,7 +44,7 @@ export default function HomeHeader(){
                 </CartLink>
             </HeaderBox>
             <MenuOptions>
-                <BtnMenu>
+                <BtnMenu onClick={() => { location.href = "/"; }}>
                     <BtnTxt>Home</BtnTxt>
                 </BtnMenu>
                 <BtnMenu>

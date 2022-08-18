@@ -1,17 +1,48 @@
 import {
     Container,
+    HeaderBox,
+    BoxSearch,
+    InputSearch,
     LogoRetail,
     MenuOptions,
     BtnMenu,
-    BtnTxt
+    BtnTxt,
+    BtnSrch,
+    SloganRetail,
+    LinkWho,
+    AccountLink,
+    AccountText,
+    CartLink,
+    CartItens
 } from "./style";
 
 import SourceRetail from "../../resources/logo.png";
 
+import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
+import { RiAccountCircleFill } from "react-icons/ri";
+
 export default function HomeHeader(){
     return (
         <Container>
-            <LogoRetail src={SourceRetail} title="Star Retail" alt="Star Retail" />
+            <HeaderBox>
+                <LogoRetail src={SourceRetail} title="Star Retail" alt="Star Retail" />
+                <SloganRetail>Compre sem complicações</SloganRetail>
+                <BoxSearch>
+                    <InputSearch type="text" autoComplete="on" autoCapitalize="off" placeholder="Pesquisar..." />
+                    <BtnSrch>
+                        <AiOutlineSearch size={22} color="#041E46" />
+                    </BtnSrch>
+                </BoxSearch>
+                <LinkWho href="#">Quem somos?</LinkWho>
+                <AccountLink>
+                    <RiAccountCircleFill size={20} color="#041E46"  />
+                    <AccountText>A minha area</AccountText>
+                </AccountLink>
+                <CartLink>
+                    <AiOutlineShoppingCart size={20} color="#E05931" />
+                    <CartItens>2</CartItens>
+                </CartLink>
+            </HeaderBox>
             <MenuOptions>
                 <BtnMenu>
                     <BtnTxt>Home</BtnTxt>
@@ -20,7 +51,7 @@ export default function HomeHeader(){
                     <BtnTxt>Tickets</BtnTxt>
                 </BtnMenu>
                 <BtnMenu>
-                    <BtnTxt>A minha conta</BtnTxt>
+                    <BtnTxt>Lojas</BtnTxt>
                 </BtnMenu>
                 <BtnMenu>
                     <BtnTxt>Ajuda</BtnTxt>

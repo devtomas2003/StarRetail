@@ -13,10 +13,14 @@ import {
     AccountLink,
     AccountText,
     CartLink,
-    CartItens
+    CartItens,
+    ChangeLang,
+    IconFlag
 } from "./style";
 
 import SourceRetail from "../../resources/logo.png";
+import US from "../../resources/us.png";
+import PT from "../../resources/pt.png";
 
 import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
 import { RiAccountCircleFill } from "react-icons/ri";
@@ -42,6 +46,9 @@ export default function HomeHeader(){
                     <AiOutlineShoppingCart size={20} color="#E05931" />
                     <CartItens>2</CartItens>
                 </CartLink>
+                <ChangeLang>
+                    <IconFlag src={PT} title="English" />
+                </ChangeLang>
             </HeaderBox>
             <MenuOptions>
                 <BtnMenu onClick={() => { location.href = "/"; }}>

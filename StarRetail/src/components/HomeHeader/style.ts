@@ -98,6 +98,9 @@ export const AccountLink = styled.div`
     flex-direction: row;
     align-items: center;
     margin-left: 30px;
+    @media (max-width: 980px) {
+        margin-left: 10px;
+    }
     &:hover{
         cursor: pointer;
         text-decoration: underline;
@@ -114,6 +117,9 @@ export const CartLink = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+    @media (max-width: 980px) {
+        margin-left: 15px;
+    }
     margin-left: 25px;
     padding: 5px;
     border-radius: 5px;
@@ -127,4 +133,20 @@ export const CartItens = styled.p`
     margin-left: 5px;
     font-size: 15px;
     color: #E05931;
+`;
+
+export const ChangeLang = styled.div`
+    margin-left: 20px;
+    @media (max-width: 980px) {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+`;
+
+export const IconFlag = styled.img`
+    width: 25px;
+    height: 16px;
 `;

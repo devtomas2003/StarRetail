@@ -41,6 +41,7 @@ export const ContTxt = styled.p`
 
 export const InptBox = styled.input`
     background: #EDEFF3;
+    color: #041E46;
     border-radius: 20px;
     outline: none;
     border: none;

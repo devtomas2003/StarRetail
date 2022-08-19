@@ -26,23 +26,34 @@ export const MenuBox = styled.div`
     display: flex;
     flex-direction: column;
     width: fit-content;
-    background: #fafafa;
-    padding: 15px;
-    width: 15vw;
+    background: #F2F4F4;
+    width: 15%;
 `;
 
 export const TitleTxt = styled.h1`
     color: #041E46;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 `;
 
-export const LinkMenu = styled.a`
-    margin-top: 7px;
-    width: fit-content;
-    color: #041E46;
-    text-decoration: none;
+export const CntZone = styled.div`
+    width: 85%;
+`;
+
+export const BtnMenu = styled.div`
+    padding: 15px;
+    background: #F2F4F4;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     &:hover{
-        text-decoration: underline;
+        background: #ebe8e8;
+        cursor: pointer;
     }
 `;
 
-export const CntZone = styled.div``;
+export const LinkMenu = styled.p`
+    color: #041E46;
+    margin-left: 5px;
+`;

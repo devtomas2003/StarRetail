@@ -124,6 +124,66 @@ module.exports = {
                 "btnBack": "Back to Home Page"
             });
         }
+        if(req.params.context === "account" && req.params.lang === "pt"){
+            return res.status(200).json({
+                "footer": footerLangsPT,
+                "header": headerLangsPT,
+                "menTitle": "Menu",
+                "tickMenOpt": "Os meus bilhetes",
+                "orderMenOpt": "As minha encomendas",
+                "fatsMenOpt": "Faturas",
+                "addrMenOpt": "Moradas",
+                "confMenOpt": "Configurações",
+                "endSessMenOpt": "Terminar sessão"
+            });
+        }
+        if(req.params.context === "account" && req.params.lang === "en"){
+            return res.status(200).json({
+                "footer": footerLangsEN,
+                "header": headerLangsEN,
+                "menTitle": "Menu",
+                "tickMenOpt": "My Tickets",
+                "orderMenOpt": "My Orders",
+                "fatsMenOpt": "Invoices",
+                "addrMenOpt": "Addresses",
+                "confMenOpt": "Settings",
+                "endSessMenOpt": "Logout"
+            });
+        }
+        if(req.params.context === "tickets" && req.params.lang === "pt"){
+            return res.status(200).json({
+                "ticketTitle": "Os meus bilhetes",
+                "conserWarm": "Pense antes de imprimir! Pode apresentar os bilhetes de forma digital.",
+                "ticketTitle": "Dados do Bilhete",
+                "lblname": "Nome:",
+                "lbllocal": "Local:",
+                "lblvalidtk": "Bilhetes válidos:",
+                "lblrestrict": "Restrições:",
+                "lbldate": "Data:",
+                "lblduraction": "Duração:",
+                "lblbene": "Benefício:",
+                "lblstudent": "Estudante",
+                "lvlViewTk": "Ver bilhete(s)",
+                "lvldate": "__DATE__ às __HOUR__"
+            });
+        }
+        if(req.params.context === "tickets" && req.params.lang === "en"){
+            return res.status(200).json({
+                "ticketTitle": "My Tickets",
+                "conserWarm": "Think before you print! You can present your tickets digitally.",
+                "ticketTitle": "Ticket Data",
+                "lblname": "Name:",
+                "lbllocal": "Location:",
+                "lblvalidtk": "Valid tickets:",
+                "lblrestrict": "Restrictions:",
+                "lbldate": "Date:",
+                "lblduraction": "Duration:",
+                "lblbene": "Benefit:",
+                "lblstudent": "Student",
+                "lvlViewTk": "View ticket(s)",
+                "lvldate": "__DATE__ at __HOUR__"
+            });
+        }
         return res.status(404).json({
             "message": "Context or language not found"
         });

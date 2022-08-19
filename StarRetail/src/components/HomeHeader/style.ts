@@ -49,7 +49,7 @@ export const MenuOptions = styled.div`
     flex-direction: row;
     justify-content: center;
     margin-top: 15px;
-    background: #F0F0F0;
+    background: #D8D8D8;
     width: 100%;
 `;
 
@@ -57,17 +57,16 @@ export const BtnMenu = styled.div`
     padding: 10px 30px 10px 30px;
     user-select: none;
     &:hover p{
-        border-bottom: 1px solid #F56034;
+        border-bottom: 2px solid #F56034;
     }
     &:hover{
-        background: #DFDFDF;
         cursor: pointer;
     }
 `;
 
 export const BtnTxt = styled.p`
     font-size: 18px;
-    border-bottom: 1px solid transparent;
+    border-bottom: 2px solid transparent;
     color: #041E46;
     text-transform: uppercase;
 `;

@@ -67,6 +67,7 @@ export const TicketContainer = styled.div`
 export const BoxMetadata = styled.div`
     display: flex;
     flex-direction: column;
+    height: 100%;
 `;
 
 export const MLLabel = styled.p`
@@ -90,17 +91,18 @@ export const MetadataContainer = styled.div`
     flex-direction: column;
     align-items: center;
     margin-left: 10px;
+    width: 12vw;
 `;
 
 export const BtnPrint = styled.div`
     display: flex;
     flex-direction: row;
+    margin-top: auto;
     align-items: center;
     padding: 7px;
     border-radius: 5px;
     background: #041E46;
     width: fit-content;
-    margin-top: 10px;
     &:hover{
         cursor: pointer;
     }

@@ -5,7 +5,8 @@ import {
     MenuBox,
     TitleTxt,
     LinkMenu,
-    CntZone
+    CntZone,
+    BtnMenu
 } from "./style";
 
 import { useState } from "react";
@@ -13,11 +14,16 @@ import { useState } from "react";
 import HomeFooter from "../../components/HomeFooter";
 import HomeHeader from "../../components/HomeHeader";
 import Tickets from "../../Views/Tickets";
-import { HomeType } from "../../types/Langs";
+import { AccountType } from "../../types/Langs";
+
+import { FaTicketAlt, FaFileInvoiceDollar, FaAddressBook } from "react-icons/fa";
+import { BiPackage } from "react-icons/bi";
+import { BsGearFill } from "react-icons/bs";
+import { ImExit } from "react-icons/im";
 
 export default function Account(){
 
-    const [pageTexts, setPageTexts] = useState<HomeType>();
+    const [pageTexts, setPageTexts] = useState<AccountType>();
     const [localContext, setLocalContext] = useState<number>(0);
 
     return (
@@ -26,16 +32,34 @@ export default function Account(){
                 <BoxAccount>
                     <AccountContainer>
                         <MenuBox>
-                            <TitleTxt>Menu</TitleTxt>
-                            <LinkMenu href="#" onClick={(e) => { e.preventDefault(); setLocalContext(1); }}>Os meus bilhetes</LinkMenu>
-                            <LinkMenu href="#">As minha encomendas</LinkMenu>
-                            <LinkMenu href="#">Faturas</LinkMenu>
-                            <LinkMenu href="#">Muradas</LinkMenu>
-                            <LinkMenu href="#">Configurações</LinkMenu>
-                            <LinkMenu href="#">Terminar sessão</LinkMenu>
+                            <TitleTxt>{pageTexts?.menTitle}</TitleTxt>
+                            <BtnMenu onClick={(e) => { e.preventDefault(); setLocalContext(1); }}>
+                                <FaTicketAlt size={20} color="#041E46" />
+                                <LinkMenu>{pageTexts?.tickMenOpt}</LinkMenu>
+                            </BtnMenu>
+                            <BtnMenu>
+                                <BiPackage size={20} color="#041E46" />
+                                <LinkMenu>{pageTexts?.orderMenOpt}</LinkMenu>
+                            </BtnMenu>
+                            <BtnMenu>
+                                <FaFileInvoiceDollar size={20} color="#041E46" />
+                                <LinkMenu>{pageTexts?.fatsMenOpt}</LinkMenu>
+                            </BtnMenu>
+                            <BtnMenu>
+                                <FaAddressBook size={20} color="#041E46" />
+                                <LinkMenu>{pageTexts?.addrMenOpt}</LinkMenu>
+                            </BtnMenu>
+                            <BtnMenu>
+                                <BsGearFill size={20} color="#041E46" />
+                                <LinkMenu>{pageTexts?.confMenOpt}</LinkMenu>
+                            </BtnMenu>
+                            <BtnMenu>
+                                <ImExit size={20} color="#041E46" />
+                                <LinkMenu>{pageTexts?.endSessMenOpt}</LinkMenu>
+                            </BtnMenu>
                         </MenuBox>
                         <CntZone>
-                            { localContext === 1 ? <Tickets /> : null }
+                            { localContext === 1 ? <Tickets lang={pageTexts?.header?.lang} /> : null }
                         </CntZone>
                     </AccountContainer>
                 </BoxAccount>

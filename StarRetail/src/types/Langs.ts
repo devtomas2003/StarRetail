@@ -58,3 +58,30 @@ export type ErrorNotFoundType = {
     notFoundTxt?: string;
     btnBack?: string;
 }
+
+export type AccountType = {
+    footer?: FooterType;
+    header?: HeaderType;
+    menTitle?: string;
+    tickMenOpt?: string;
+    orderMenOpt?: string;
+    fatsMenOpt?: string;
+    addrMenOpt?: string;
+    confMenOpt?: string;
+    endSessMenOpt?: string;
+}
+
+export type TicketsType = {
+    ticketTitle?: string;
+    conserWarm?: string;
+    lblname?: string;
+    lbllocal?: string;
+    lblvalidtk?: string;
+    lblrestrict?: string;
+    lbldate?: string;
+    lblduraction?: string;
+    lblbene?: string;
+    lblstudent?: string;
+    lvlViewTk?: string;
+    lvldate?: string;
+};

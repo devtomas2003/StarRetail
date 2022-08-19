@@ -18,8 +18,13 @@ import {
 import RetailLogo from "../../resources/logo.png";
 
 import { BsInstagram, BsFacebook, BsYoutube, BsTwitter } from "react-icons/bs";
+import { HomeType } from "../../types/Langs";
 
-export default function HomeFooter(){
+type FooterProps = {
+    pageTexts?: HomeType;
+};
+
+export default function HomeFooter(props: FooterProps){
     return (
         <BoxFooter>
             <Container>
@@ -28,34 +33,34 @@ export default function HomeFooter(){
                     <ListsBox>
                         <TxtTitle>Links</TxtTitle>
                         <ListsLinks>
-                            <LinkTxt href="/">Home</LinkTxt>
-                            <LinkTxt href="#">Lojas</LinkTxt>
-                            <LinkTxt href="#">Mapas</LinkTxt>
-                            <LinkTxt href="#">Carrinho</LinkTxt>
-                            <LinkTxt href="/login">A minha area</LinkTxt>
-                            <LinkTxt href="#">Ajuda</LinkTxt>
-                            <LinkTxt href="#">Termos e condições</LinkTxt>
-                            <LinkTxt href="#">Trocas e devoluções</LinkTxt>
+                            <LinkTxt href={"/?lang=" + props.pageTexts?.header?.lang}>{props.pageTexts?.header?.homeMenu}</LinkTxt>
+                            <LinkTxt href="#">{props.pageTexts?.header?.storesMenu}</LinkTxt>
+                            <LinkTxt href="#">{props.pageTexts?.footer?.footerMaps}</LinkTxt>
+                            <LinkTxt href="#">{props.pageTexts?.footer?.footerCart}</LinkTxt>
+                            <LinkTxt href={"/login?lang=" + props.pageTexts?.header?.lang}>{props.pageTexts?.header?.accountArea}</LinkTxt>
+                            <LinkTxt href="#">{props.pageTexts?.header?.helpMenu}</LinkTxt>
+                            <LinkTxt href="#">{props.pageTexts?.footer?.footerTermsAndConds}</LinkTxt>
+                            <LinkTxt href="#">{props.pageTexts?.footer?.footerExchanges}</LinkTxt>
                         </ListsLinks>
                     </ListsBox>
                     <ListsBox>
-                        <TxtTitle>Atendimento</TxtTitle>
+                        <TxtTitle>{props.pageTexts?.footer?.footerAtend}</TxtTitle>
                         <ListsLinks>
                             <LinkTxt href="tel:00351967492692">+351 967492692</LinkTxt>
                             <LinkTxt href="mailto:dev.tomas2003@gmail.com">dev.tomas2003@gmail.com</LinkTxt>
                         </ListsLinks>
                     </ListsBox>
                     <ListsBox>
-                        <TxtTitle>Metodos de pagamento</TxtTitle>
+                        <TxtTitle>{props.pageTexts?.footer?.footerPayMethod}</TxtTitle>
                         <ListsLinks>
-                            <ListTxt>Cartão de debito/credito via GPay</ListTxt>
-                            <ListTxt>MbWay (Verificação Manual)</ListTxt>
-                            <ListTxt>Transferência bancaria</ListTxt>
-                            <ListTxt>Operadoras (Vodafone, MEO) via GPay</ListTxt>
+                            <ListTxt>{props.pageTexts?.footer?.payMethodCard}</ListTxt>
+                            <ListTxt>{props.pageTexts?.footer?.payMethodMbWay}</ListTxt>
+                            <ListTxt>{props.pageTexts?.footer?.payMethodBank}</ListTxt>
+                            <ListTxt>{props.pageTexts?.footer?.payMethodCarrier?.replace("__CARRIERS__", "Vodafone, MEO")}</ListTxt>
                         </ListsLinks>
                     </ListsBox>
                     <ListsBox>
-                        <TxtTitle>Redes Sociais</TxtTitle>
+                        <TxtTitle>{props.pageTexts?.footer?.footerSocial}</TxtTitle>
                         <ListsLinks>
                             <BtnSocial onClick={() => { window.open("https://www.instagram.com/tomas20031234/", '_blank'); }}>
                                 <BsInstagram size={20} color="#fff" />
@@ -79,7 +84,7 @@ export default function HomeFooter(){
             </Container>
             <CopyRightBx>
                 <TxtCopy>© 2022 - {new Date().getFullYear()} IMM, SA.</TxtCopy>
-                <TxtCopy>Software criado na <LblBold>S.T.A.R Labs</LblBold></TxtCopy>
+                <TxtCopy>{props.pageTexts?.footer?.copyright} <LblBold>S.T.A.R Labs</LblBold></TxtCopy>
             </CopyRightBx>
         </BoxFooter>
     );

@@ -23,6 +23,7 @@ import {
 
 import { RiSecurePaymentFill } from "react-icons/ri";
 import { AiFillGithub, AiFillYoutube } from "react-icons/ai";
+import { HomeType } from "../../types/Langs";
 
 type SliderProps = {
     imageUri: string;
@@ -33,6 +34,7 @@ export default function Home(){
 
     const sliderStarted = useRef<boolean>(false);
     const [activeSlider, setActiveSlider] = useState<number>(0);
+    const [pageTexts, setPageTexts] = useState<HomeType>();
     
     const listSliders = [
         {
@@ -157,7 +159,7 @@ export default function Home(){
 
     return (
         <Container>
-            <HomeHeader />
+            <HomeHeader changeTextLang={setPageTexts} fromCtx="home" />
             <SliderHome imageSrc={listSliders[activeSlider].imageUri} title={listSliders[activeSlider].titleSlider}>
                 <SliderSelect>
                     { listSliders.map((slider: SliderProps, i: number) => {
@@ -170,19 +172,19 @@ export default function Home(){
             <FooterSlider>
                 <FooterItemSl>
                     <RiSecurePaymentFill size={25} color="#fff" />
-                    <TxtFoItSl>Pagamentos faceis e seguros</TxtFoItSl>
+                    <TxtFoItSl>{pageTexts?.sliderSlFirst}</TxtFoItSl>
                 </FooterItemSl>
                 <FooterItemSl onClick={() => { window.open("https://github.com/devtomas2003/StarRetail", '_blank'); }}>
                     <AiFillGithub size={25} color="#fff" />
-                    <TxtFoItSl>Somos 100% transparentes</TxtFoItSl>
+                    <TxtFoItSl>{pageTexts?.sliderSlSecond}</TxtFoItSl>
                 </FooterItemSl>
                 <FooterItemSl>
                     <AiFillYoutube size={25} color="#fff" />
-                    <TxtFoItSl>Videos técnicos no YouTube</TxtFoItSl>
+                    <TxtFoItSl>{pageTexts?.sliderSlThird}</TxtFoItSl>
                 </FooterItemSl>
             </FooterSlider>
             <MostedTickets>
-                <ListTitle>Os eventos mais visitados</ListTitle>
+                <ListTitle>{pageTexts?.mostEventsTl}</ListTitle>
                 <ListsMore>
                     { listsHome.events.map((event, pos) => {
                         return (
@@ -196,7 +198,7 @@ export default function Home(){
                 </ListsMore>
             </MostedTickets>
             <MostedStores>
-                <ListTitle>As lojas mais visitadas</ListTitle>
+                <ListTitle>{pageTexts?.mostStoresTl}</ListTitle>
                 <ListsMore>
                     { listsHome.stores.map((store, pos) => {
                         return (
@@ -208,7 +210,7 @@ export default function Home(){
                     })}
                 </ListsMore>
             </MostedStores>
-            <HomeFooter />
+            <HomeFooter pageTexts={pageTexts} />
         </Container>
     );
 }

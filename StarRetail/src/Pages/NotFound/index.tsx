@@ -11,19 +11,24 @@ import HomeFooter from "../../components/HomeFooter";
 import HomeHeader from "../../components/HomeHeader";
 
 import ImgNotFound from "../../resources/404.png";
+import { useState } from "react";
+import { ErrorNotFoundType } from "../../types/Langs";
 
 export default function PageNotFound(){
+    
+    const [pageTexts, setPageTexts] = useState<ErrorNotFoundType>();
+
     return (
         <Container>
-            <HomeHeader />
+            <HomeHeader changeTextLang={setPageTexts} fromCtx="not-found-page" />
                 <BoxError>
-                    <ImgError src={ImgNotFound} title="Error 404" alt="Error 404" />
-                    <TxtError>A página que procuras não existe!</TxtError>
-                    <BackHomeBtn onClick={() => { location.href = "/"; }}>
-                        <BcHomeTxt>Voltar para a Pagina Inicial</BcHomeTxt>
+                    <ImgError src={ImgNotFound} title={pageTexts?.imgError} alt={pageTexts?.imgError} />
+                    <TxtError>{pageTexts?.notFoundTxt}</TxtError>
+                    <BackHomeBtn onClick={() => { location.href = "/?lang=" + pageTexts?.header?.lang; }}>
+                        <BcHomeTxt>{pageTexts?.btnBack}</BcHomeTxt>
                     </BackHomeBtn>
                 </BoxError>
-            <HomeFooter />
+            <HomeFooter pageTexts={pageTexts} />
         </Container>
     );
 }

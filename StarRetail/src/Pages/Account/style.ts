@@ -1,12 +1,19 @@
 import styled from "styled-components";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+`;
 
 export const BoxAccount = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 100%;
+    height: 100%;
 `;
 
 export const AccountContainer = styled.div`
@@ -38,6 +45,4 @@ export const LinkMenu = styled.a`
     }
 `;
 
-export const CntZone = styled.div`
-
-`;
+export const CntZone = styled.div``;

@@ -1,5 +1,9 @@
+import { useState } from "react";
 import HomeFooter from "../../components/HomeFooter";
 import HomeHeader from "../../components/HomeHeader";
+
+import { LoginType } from "../../types/Langs";
+
 import {
     Container,
     BoxLogin,
@@ -15,30 +19,33 @@ import {
 } from "./style";
 
 export default function Login(){
+
+    const [pageTexts, setPageTexts] = useState<LoginType>();
+
     return (
         <Container>
-            <HomeHeader />
+            <HomeHeader changeTextLang={setPageTexts} fromCtx="login" />
             <BoxLogin>
-                <TitleLogin>Identificação</TitleLogin>
+                <TitleLogin>{pageTexts?.idTitle}</TitleLogin>
                 <LoginContainer>
-                    <ContTxt>Utilizador</ContTxt>
+                    <ContTxt>{pageTexts?.userlbl}</ContTxt>
                     <InptBox type="text" autoComplete="on" autoCapitalize="false" />
-                    <ContTxt>Password</ContTxt>
+                    <ContTxt>{pageTexts?.passlbl}</ContTxt>
                     <InptBox type="password" autoComplete="on" />
-                    <ContTxt>Tipo de conta</ContTxt>
+                    <ContTxt>{pageTexts?.lblacctype}</ContTxt>
                     <SelectActTp>
-                        <OptionActTp>Cliente</OptionActTp>
-                        <OptionActTp>Lojista</OptionActTp>
-                        <OptionActTp>Eventos</OptionActTp>
+                        <OptionActTp>{pageTexts?.clientTp}</OptionActTp>
+                        <OptionActTp>{pageTexts?.lojisTp}</OptionActTp>
+                        <OptionActTp>{pageTexts?.eventsTp}</OptionActTp>
                     </SelectActTp>
-                    <ForgotLink href="#">Esqueceu a sua password?</ForgotLink>
+                    <ForgotLink href="#">{pageTexts?.forgotPass}</ForgotLink>
                     <BtnSignIn>
-                        <SignInTxt>Iniciar sessão</SignInTxt>
+                        <SignInTxt>{pageTexts?.btnStartSession}</SignInTxt>
                     </BtnSignIn>
-                    <ForgotLink href="#">Ainda não têm conta? Crie uma!</ForgotLink>
+                    <ForgotLink href="#">{pageTexts?.createAcct}</ForgotLink>
                 </LoginContainer>
             </BoxLogin>
-            <HomeFooter />
+            <HomeFooter pageTexts={pageTexts} />
         </Container>
     );
 }

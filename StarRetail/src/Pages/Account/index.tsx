@@ -13,14 +13,16 @@ import { useState } from "react";
 import HomeFooter from "../../components/HomeFooter";
 import HomeHeader from "../../components/HomeHeader";
 import Tickets from "../../Views/Tickets";
+import { HomeType } from "../../types/Langs";
 
 export default function Account(){
 
+    const [pageTexts, setPageTexts] = useState<HomeType>();
     const [localContext, setLocalContext] = useState<number>(0);
 
     return (
         <Container>
-            <HomeHeader />
+            <HomeHeader changeTextLang={setPageTexts} fromCtx="account" />
                 <BoxAccount>
                     <AccountContainer>
                         <MenuBox>
@@ -37,7 +39,7 @@ export default function Account(){
                         </CntZone>
                     </AccountContainer>
                 </BoxAccount>
-            <HomeFooter />
+            <HomeFooter pageTexts={pageTexts} />
         </Container>
     );
 }

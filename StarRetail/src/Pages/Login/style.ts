@@ -42,7 +42,7 @@ export const ContTxt = styled.p`
 export const InptBox = styled.input`
     background: #EDEFF3;
     color: #041E46;
-    border-radius: 20px;
+    border-radius: 8px;
     outline: none;
     border: none;
     width: 100%;
@@ -52,7 +52,7 @@ export const InptBox = styled.input`
 
 export const SelectActTp = styled.select`
     background: #EDEFF3;
-    border-radius: 20px;
+    border-radius: 8px;
     outline: none;
     border: none;
     width: 100%;

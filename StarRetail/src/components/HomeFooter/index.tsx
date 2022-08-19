@@ -36,7 +36,7 @@ export default function HomeFooter(props: FooterProps){
                             <LinkTxt href={"/?lang=" + props.pageTexts?.header?.lang}>{props.pageTexts?.header?.homeMenu}</LinkTxt>
                             <LinkTxt href="#">{props.pageTexts?.header?.storesMenu}</LinkTxt>
                             <LinkTxt href="#">{props.pageTexts?.footer?.footerMaps}</LinkTxt>
-                            <LinkTxt href="#">{props.pageTexts?.footer?.footerCart}</LinkTxt>
+                            <LinkTxt href={"/cart?lang=" + props.pageTexts?.header?.lang}>{props.pageTexts?.footer?.footerCart}</LinkTxt>
                             <LinkTxt href={"/login?lang=" + props.pageTexts?.header?.lang}>{props.pageTexts?.header?.accountArea}</LinkTxt>
                             <LinkTxt href="#">{props.pageTexts?.header?.helpMenu}</LinkTxt>
                             <LinkTxt href="#">{props.pageTexts?.footer?.footerTermsAndConds}</LinkTxt>

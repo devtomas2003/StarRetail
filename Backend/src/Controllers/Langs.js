@@ -161,8 +161,6 @@ module.exports = {
                 "lblrestrict": "Restrições:",
                 "lbldate": "Data:",
                 "lblduraction": "Duração:",
-                "lblbene": "Benefício:",
-                "lblstudent": "Estudante",
                 "lvlViewTk": "Ver bilhete(s)",
                 "lvldate": "__DATE__ às __HOUR__"
             });
@@ -178,10 +176,20 @@ module.exports = {
                 "lblrestrict": "Restrictions:",
                 "lbldate": "Date:",
                 "lblduraction": "Duration:",
-                "lblbene": "Benefit:",
-                "lblstudent": "Student",
                 "lvlViewTk": "View ticket(s)",
                 "lvldate": "__DATE__ at __HOUR__"
+            });
+        }
+        if(req.params.context === "cart" && req.params.lang === "pt"){
+            return res.status(200).json({
+                "footer": footerLangsPT,
+                "header": headerLangsPT
+            });
+        }
+        if(req.params.context === "cart" && req.params.lang === "en"){
+            return res.status(200).json({
+                "footer": footerLangsEN,
+                "header": headerLangsEN
             });
         }
         return res.status(404).json({

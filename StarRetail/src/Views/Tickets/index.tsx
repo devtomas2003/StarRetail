@@ -61,7 +61,6 @@ export default function Tickets(props: TicketsProps){
                             <MLLabel>{txtLangs?.lblrestrict} <BoldLbl>M12</BoldLbl></MLLabel>
                             <MLLabel>{txtLangs?.lbldate} <BoldLbl>{txtLangs?.lvldate?.replace("__DATE__", "20/08/2022").replace("__HOUR__", "18:00")}</BoldLbl></MLLabel>
                             <MLLabel>{txtLangs?.lblduraction} <BoldLbl>180 minutos</BoldLbl></MLLabel>
-                            <MLLabel>{txtLangs?.lblbene} <BoldLbl>{txtLangs?.lblstudent}</BoldLbl></MLLabel>
                             <BtnPrint>
                                 <AiFillEye size={20} color="#fff" />
                                 <PrintTxt>{txtLangs?.lvlViewTk}</PrintTxt>
@@ -86,7 +85,6 @@ export default function Tickets(props: TicketsProps){
                             <MLLabel>{txtLangs?.lblrestrict} <BoldLbl>M12</BoldLbl></MLLabel>
                             <MLLabel>{txtLangs?.lbldate} <BoldLbl>{txtLangs?.lvldate?.replace("__DATE__", "20/08/2022").replace("__HOUR__", "18:00")}</BoldLbl></MLLabel>
                             <MLLabel>{txtLangs?.lblduraction} <BoldLbl>180 minutos</BoldLbl></MLLabel>
-                            <MLLabel>{txtLangs?.lblbene} <BoldLbl>{txtLangs?.lblstudent}</BoldLbl></MLLabel>
                             <BtnPrint>
                                 <AiFillEye size={20} color="#fff" />
                                 <PrintTxt>{txtLangs?.lvlViewTk}</PrintTxt>
@@ -111,7 +109,6 @@ export default function Tickets(props: TicketsProps){
                             <MLLabel>{txtLangs?.lblrestrict} <BoldLbl>M12</BoldLbl></MLLabel>
                             <MLLabel>{txtLangs?.lbldate} <BoldLbl>{txtLangs?.lvldate?.replace("__DATE__", "20/08/2022").replace("__HOUR__", "18:00")}</BoldLbl></MLLabel>
                             <MLLabel>{txtLangs?.lblduraction} <BoldLbl>180 minutos</BoldLbl></MLLabel>
-                            <MLLabel>{txtLangs?.lblbene} <BoldLbl>{txtLangs?.lblstudent}</BoldLbl></MLLabel>
                             <BtnPrint>
                                 <AiFillEye size={20} color="#fff" />
                                 <PrintTxt>{txtLangs?.lvlViewTk}</PrintTxt>
@@ -136,7 +133,6 @@ export default function Tickets(props: TicketsProps){
                             <MLLabel>{txtLangs?.lblrestrict} <BoldLbl>M12</BoldLbl></MLLabel>
                             <MLLabel>{txtLangs?.lbldate} <BoldLbl>{txtLangs?.lvldate?.replace("__DATE__", "20/08/2022").replace("__HOUR__", "18:00")}</BoldLbl></MLLabel>
                             <MLLabel>{txtLangs?.lblduraction} <BoldLbl>180 minutos</BoldLbl></MLLabel>
-                            <MLLabel>{txtLangs?.lblbene} <BoldLbl>{txtLangs?.lblstudent}</BoldLbl></MLLabel>
                             <BtnPrint>
                                 <AiFillEye size={20} color="#fff" />
                                 <PrintTxt>{txtLangs?.lvlViewTk}</PrintTxt>

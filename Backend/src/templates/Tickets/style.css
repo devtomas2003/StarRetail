@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+div.container{
+    padding: 20px;
+}
+div.headerLogos{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+div.headerLogos img{
+    height: 45px;
+}
+div.titleTickets{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+div.titleTickets h1{
+    font-size: 23px;
+    color: #041E46;
+}
+div.eventDetails{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    background: #fafafa;
+}
+.imgEvent{
+    width: 163px;
+}
+div.eventMetadata{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    width: 35vw;
+}
+div.eventMetadata img{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100px;
+}
+div.eventMetadata label{
+    font-weight: bold;
+    font-size: 12px;
+}
+div.eventMetadata p{
+    margin-top: 2px;
+    font-size: 12px;
+}
+div.eventMetadata p:not(:first-child){
+    margin-top: 5px;
+}
+div.eventMetadata p:last-child{
+    margin-bottom: 5px;
+    font-size: 10px;
+}
+div.qrcode img{
+    width: 120px !important;
+}
+div.qrcode{
+    padding: 5px;
+    background: #fff;
+}
+div.ticketslogos{
+    display: flex;
+    flex-direction: row;
+}
+div.ticketslogos img{
+    height: 40px;
+    width: initial;
+}
+div.ticketslogos img:last-child{
+    margin-left: 15px;
+}
+div.observs{
+    background: #f0f0f0;
+    margin-top: 10px;
+}
+div.observsTl{
+    background: #28a745;
+    padding: 3px;
+}
+div.observsTl p{
+    color: #fff;
+    font-size: 12px;
+}
+ul{
+    margin-left: 20px;
+}
+li{
+    color: #333;
+    margin-top: 3px;
+    font-size: 12px;
+}

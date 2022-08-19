@@ -64,9 +64,9 @@ export default function HomeHeader(props: HomeHeaderType){
                     <RiAccountCircleFill size={20} color="#041E46"  />
                     <AccountText>{textsLang?.header?.accountArea}</AccountText>
                 </AccountLink>
-                <CartLink title={textsLang?.header?.hoverCart}>
+                <CartLink title={textsLang?.header?.hoverCart} onClick={() => { location.href = "/cart?lang=" + lang; }}>
                     <AiOutlineShoppingCart size={20} color="#E05931" />
-                    <CartItens>2</CartItens>
+                    <CartItens>{Object.keys(JSON.parse(localStorage.getItem('cartItens') || '{}')).length}</CartItens>
                 </CartLink>
                 <ChangeLang onClick={() => { setLang(lang === "en" ? "pt" : "en"); }}>
                     { lang === "en" ? <IconFlag src={PT} title="Português" /> : <IconFlag src={US} title="English" /> }

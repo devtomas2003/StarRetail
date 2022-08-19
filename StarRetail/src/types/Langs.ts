@@ -80,8 +80,11 @@ export type TicketsType = {
     lblrestrict?: string;
     lbldate?: string;
     lblduraction?: string;
-    lblbene?: string;
-    lblstudent?: string;
     lvlViewTk?: string;
     lvldate?: string;
 };
+
+export type CartType = {
+    footer?: FooterType;
+    header?: HeaderType;
+}

@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>Print Tickets</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="headerLogos">
+                <img src="http://192.168.1.10/Retail/logo.png" />
+                <img src="http://192.168.1.10/Retail/44deee2d-91ca-440d-b072-8c91ee6bed48.png" />
+            </div>
+            <div class="titleTickets">
+                <h1>Bilhetes / Tickets</h1>
+            </div>
+            <div id="listTickets"></div>
+            <div class="observs">
+                <div class="observsTl">
+                    <p>Observações / Observations</p>
+                </div>
+                <ul>
+                    <li>Os bilhetes não são reembolsaveis. Tickets are non-refundable.</li>
+                </ul>
+            </div>
+        </div>
+        <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+        <script>
+            const tickets = [
+                {
+                    "seat": "B1",
+                    "code": "e1ea53bf-49d9-4a7e-894f-a9abcf846546",
+                    "benefit": "Estudante / Student"
+                },
+                {
+                    "seat": "B2",
+                    "code": "00daab60-5d15-4b83-84ea-6277d33c0e28",
+                    "benefit": "Estudante / Student"
+                },
+                {
+                    "seat": "B3",
+                    "code": "849ad75f-ac6f-4c5d-b571-0f0a2a17a711",
+                    "benefit": "Estudante / Student"
+                },
+                {
+                    "seat": "B4",
+                    "code": "fab39ae7-8ec3-4b8d-9182-d0d1a9745c94",
+                    "benefit": "Estudante / Student"
+                }
+            ];
+            var ticket = "";
+            for(var i = 0; i <= tickets.length-1; i++){
+                ticket = ticket + '<div class="eventDetails"><div class="eventMetadata"><div class="ticketslogos"><img src="http://192.168.1.10/Retail/logo.png"><img src="http://192.168.1.10/Retail/44deee2d-91ca-440d-b072-8c91ee6bed48.png" /></div><p>Nome / Name: <label>Diogo Bataguas - Processo</label></p><p>Data / Date: <label>19/08/2022</label></p><p>Hora / Time: <label>18:30</label></p><p>Zona / Zone: <label>' + tickets[i].seat + '</label></p><p>Local / Local: <label>Placo Principal</label></p><p>Benefit / Benefício: <label>' + tickets[i].benefit + '</label></p><p>Preço / Price: <label>43,50 €</label></p><p>Pode comprar brindes em https://bataguas.pt/ You can buy suveniers at https://bataguas.pt/</p></div><div class="qrcode" data-qrcode="' + tickets[i].code + '"></div><img src="http://192.168.1.10/Retail/93daeff4-6495-417d-ad50-6a6bbed8da09.jpg" class="imgEvent" title="Test 1" alt="Test 1" /></div>';
+                document.getElementById("listTickets").innerHTML = ticket;
+            }
+            for(var a = 0; a <= tickets.length-1; a++){
+                const elemts = document.getElementsByClassName("qrcode");
+                new QRCode(document.getElementsByClassName("qrcode")[a], {
+                    text: elemts[a].getAttribute('data-qrcode'),
+                    width: 150,
+                    height: 150,
+                    correctLevel : QRCode.CorrectLevel.H
+                });
+            }
+        </script>
+    </body>
+</html>
